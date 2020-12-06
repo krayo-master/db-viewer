@@ -1,5 +1,5 @@
 # interview-project
-small project for specific database data extraction in spring boot + simple react UI 
+small project for specific database data handling in spring boot + simple react UI 
 
 server "/" path redirects you to swagger doc page with the list of apis.
 
