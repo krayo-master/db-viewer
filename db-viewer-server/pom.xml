@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>sk.krayo</groupId>
-	<artifactId>interviewproject</artifactId>
+	<artifactId>dbviewer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>interviewproject</name>
-	<description>interview project for Spring Boot</description>
+	<name>dbviewer</name>
+	<description>dbviewer project for Spring Boot</description>
 
 	<properties>
 		<java.version>11</java.version>

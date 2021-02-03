@@ -6,8 +6,10 @@ import org.springframework.web.bind.annotation.*;
 import sk.krayo.dbproject.apimodel.Column;
 import sk.krayo.dbproject.apimodel.ForeignKey;
 import sk.krayo.dbproject.apimodel.Table;
+import sk.krayo.dbproject.exception.DatabaseConnectionException;
 import sk.krayo.dbproject.service.DataSourceService;
 
+import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -31,15 +33,13 @@ public class DatabaseMetaDataController {
     @GetMapping("/schemas")
     public List<String> getSchemaNames(@PathVariable("databaseId") long databaseId) {
         List<String> schemaNames = new ArrayList<>();
-        try {
-            ResultSet resultSet = dataSourceService.buildDataSource(databaseId)
-                    .getConnection().getMetaData().getSchemas();
+        try (Connection connection = dataSourceService.buildDataSource(databaseId).getConnection()){
+            ResultSet resultSet = connection.getMetaData().getSchemas();
             while (resultSet.next()) {
                 schemaNames.add(resultSet.getString("TABLE_SCHEM"));
             }
-            return schemaNames;
         } catch (SQLException ex) {
-            System.out.println("failed get schemas");
+            throw new DatabaseConnectionException("Connection error for database id: " + databaseId);
         }
         return schemaNames;
     }
@@ -47,15 +47,13 @@ public class DatabaseMetaDataController {
     @GetMapping(SCHEMA_PREFIX + "/tables")
     public List<String> getTableNames(@PathVariable("databaseId") long databaseId, @PathVariable("schemaName") String schemaName) {
         List<String> tableNames = new ArrayList<>();
-        try {
-            ResultSet resultSet = dataSourceService.buildDataSource(databaseId)
-                    .getConnection().getMetaData().getTables(null, schemaName, null, null);
+        try (Connection connection = dataSourceService.buildDataSource(databaseId).getConnection()){
+            ResultSet resultSet = connection.getMetaData().getTables(null, schemaName, null, null);
             while (resultSet.next()) {
                 tableNames.add(resultSet.getString("TABLE_NAME"));
             }
-            return tableNames;
         } catch (SQLException ex) {
-            System.out.println("failed get tables");
+            throw new DatabaseConnectionException("Connection error for database id: " + databaseId);
         }
         return tableNames;
     }
@@ -65,8 +63,8 @@ public class DatabaseMetaDataController {
     public Table getColumns(@PathVariable("databaseId") long databaseId, @PathVariable("schemaName") String schemaName,
                             @PathVariable("tableName") String tableName) throws Exception {
         Table table = new Table();
-        try {
-            DatabaseMetaData databaseMetaData = dataSourceService.buildDataSource(databaseId).getConnection().getMetaData();
+        try (Connection connection = dataSourceService.buildDataSource(databaseId).getConnection()){
+            DatabaseMetaData databaseMetaData = connection.getMetaData();
             ResultSet resultSet = databaseMetaData.getColumns(null, schemaName, tableName, null);
             table.setName(tableName);
             while (resultSet.next()) {

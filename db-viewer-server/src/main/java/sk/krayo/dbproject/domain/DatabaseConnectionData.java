@@ -102,23 +102,6 @@ public class DatabaseConnectionData implements Serializable {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        DatabaseConnectionData employee = (DatabaseConnectionData) o;
-        return Objects.equals(id, employee.id) &&
-                Objects.equals(name, employee.name) &&
-                Objects.equals(hostname, employee.hostname) &&
-                Objects.equals(databaseName, employee.databaseName);
-    }
-
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(id, name, hostname, databaseName);
-    }
-
-    @Override
     public String toString() {
         return "DatabaseConnectionData{" +
                 "id=" + id +
@@ -127,7 +110,6 @@ public class DatabaseConnectionData implements Serializable {
                 ", port=" + port +
                 ", databaseName='" + databaseName + '\'' +
                 ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
                 '}';
     }
 }

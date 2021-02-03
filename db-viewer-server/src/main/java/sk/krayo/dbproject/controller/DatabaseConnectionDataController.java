@@ -28,6 +28,11 @@ public class DatabaseConnectionDataController {
     @Autowired
     DatabaseConnectionDataRepository databaseConnectionDataRepository;
 
+    /**
+     * find all databases data
+     * @param databaseName - optional parameter to only look for this database name
+     * @return list of DatabaseConnectionData
+     */
     @GetMapping()
     public ResponseEntity<List<DatabaseConnectionData>> getAllDatabaseConnectionData(@RequestParam(required = false) String databaseName) {
         List<DatabaseConnectionData> databaseConnectionDataList = new ArrayList<>();
@@ -67,6 +72,10 @@ public class DatabaseConnectionDataController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+    /**
+     * delete all databases data
+     * @return 204 no content
+     */
     @DeleteMapping
     public ResponseEntity<HttpStatus> deleteAllDatabaseConnectionData() {
         databaseConnectionDataRepository.deleteAll();
