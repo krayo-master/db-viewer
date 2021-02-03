@@ -1,4 +1,4 @@
-package sk.krayo.interviewproject.apimodel;
+package sk.krayo.dbproject.apimodel;
 
 import java.io.Serializable;
 

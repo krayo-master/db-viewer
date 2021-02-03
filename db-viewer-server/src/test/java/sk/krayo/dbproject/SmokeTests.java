@@ -1,14 +1,14 @@
-package sk.krayo.interviewproject;
+package sk.krayo.dbproject;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import sk.krayo.interviewproject.controller.DatabaseConnectionDataController;
-import sk.krayo.interviewproject.controller.DatabaseMetaDataController;
-import sk.krayo.interviewproject.controller.DatabaseMetaDataStatsController;
-import sk.krayo.interviewproject.service.DataSourceService;
+import sk.krayo.dbproject.controller.DatabaseConnectionDataController;
+import sk.krayo.dbproject.controller.DatabaseMetaDataController;
+import sk.krayo.dbproject.controller.DatabaseMetaDataStatsController;
+import sk.krayo.dbproject.service.DataSourceService;
 
 
 @SpringBootTest

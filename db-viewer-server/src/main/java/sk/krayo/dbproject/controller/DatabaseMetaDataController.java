@@ -1,12 +1,12 @@
-package sk.krayo.interviewproject.controller;
+package sk.krayo.dbproject.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
-import sk.krayo.interviewproject.apimodel.Column;
-import sk.krayo.interviewproject.apimodel.ForeignKey;
-import sk.krayo.interviewproject.apimodel.Table;
-import sk.krayo.interviewproject.service.DataSourceService;
+import sk.krayo.dbproject.apimodel.Column;
+import sk.krayo.dbproject.apimodel.ForeignKey;
+import sk.krayo.dbproject.apimodel.Table;
+import sk.krayo.dbproject.service.DataSourceService;
 
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import static sk.krayo.interviewproject.controller.DatabaseConnectionDataController.DB_PREFIX;
+import static sk.krayo.dbproject.controller.DatabaseConnectionDataController.DB_PREFIX;
 
 @CrossOrigin(origins = {"http://localhost:3000"})
 @RestController

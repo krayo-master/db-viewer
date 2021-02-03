@@ -1,13 +1,13 @@
-package sk.krayo.interviewproject;
+package sk.krayo.dbproject;
 
 import org.easymock.EasyMock;
 import org.easymock.IMocksControl;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import sk.krayo.interviewproject.domain.DatabaseConnectionData;
-import sk.krayo.interviewproject.repository.DatabaseConnectionDataRepository;
-import sk.krayo.interviewproject.service.DataSourceService;
+import sk.krayo.dbproject.domain.DatabaseConnectionData;
+import sk.krayo.dbproject.repository.DatabaseConnectionDataRepository;
+import sk.krayo.dbproject.service.DataSourceService;
 
 public class ServiceTest {
 

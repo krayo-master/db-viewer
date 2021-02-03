@@ -1,17 +1,17 @@
-package sk.krayo.interviewproject.controller;
+package sk.krayo.dbproject.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
-import sk.krayo.interviewproject.apimodel.ColumnStats;
-import sk.krayo.interviewproject.apimodel.TableStats;
-import sk.krayo.interviewproject.service.DataSourceService;
+import sk.krayo.dbproject.apimodel.ColumnStats;
+import sk.krayo.dbproject.apimodel.TableStats;
+import sk.krayo.dbproject.service.DataSourceService;
 
 import java.util.List;
 
-import static sk.krayo.interviewproject.controller.DatabaseConnectionDataController.DB_PREFIX;
-import static sk.krayo.interviewproject.controller.DatabaseMetaDataController.SCHEMA_PREFIX;
-import static sk.krayo.interviewproject.controller.DatabaseMetaDataController.TABLE_PREFIX;
+import static sk.krayo.dbproject.controller.DatabaseConnectionDataController.DB_PREFIX;
+import static sk.krayo.dbproject.controller.DatabaseMetaDataController.SCHEMA_PREFIX;
+import static sk.krayo.dbproject.controller.DatabaseMetaDataController.TABLE_PREFIX;
 
 @CrossOrigin(origins = {"http://localhost:3000"})
 @RestController

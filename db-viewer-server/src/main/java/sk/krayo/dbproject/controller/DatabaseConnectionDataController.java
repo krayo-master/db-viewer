@@ -1,17 +1,17 @@
-package sk.krayo.interviewproject.controller;
+package sk.krayo.dbproject.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import sk.krayo.interviewproject.domain.DatabaseConnectionData;
-import sk.krayo.interviewproject.exception.ResourceNotFoundException;
-import sk.krayo.interviewproject.repository.DatabaseConnectionDataRepository;
+import sk.krayo.dbproject.domain.DatabaseConnectionData;
+import sk.krayo.dbproject.exception.ResourceNotFoundException;
+import sk.krayo.dbproject.repository.DatabaseConnectionDataRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static sk.krayo.interviewproject.controller.DatabaseConnectionDataController.*;
+import static sk.krayo.dbproject.controller.DatabaseConnectionDataController.*;
 
 
 /**

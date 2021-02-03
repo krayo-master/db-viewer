@@ -1,4 +1,4 @@
-package sk.krayo.interviewproject.domain;
+package sk.krayo.dbproject.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

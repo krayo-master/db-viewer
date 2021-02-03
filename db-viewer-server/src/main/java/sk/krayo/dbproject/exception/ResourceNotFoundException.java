@@ -1,4 +1,4 @@
-package sk.krayo.interviewproject.exception;
+package sk.krayo.dbproject.exception;
 
 public class ResourceNotFoundException extends RuntimeException {
 

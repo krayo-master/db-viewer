@@ -1,4 +1,4 @@
-package sk.krayo.interviewproject;
+package sk.krayo.dbproject;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -9,11 +9,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.datasource.init.ScriptUtils;
 import org.springframework.test.context.junit4.SpringRunner;
-import sk.krayo.interviewproject.apimodel.ColumnStats;
-import sk.krayo.interviewproject.apimodel.Table;
-import sk.krayo.interviewproject.apimodel.TableStats;
-import sk.krayo.interviewproject.controller.DatabaseMetaDataController;
-import sk.krayo.interviewproject.controller.DatabaseMetaDataStatsController;
+import sk.krayo.dbproject.apimodel.ColumnStats;
+import sk.krayo.dbproject.apimodel.Table;
+import sk.krayo.dbproject.apimodel.TableStats;
+import sk.krayo.dbproject.controller.DatabaseMetaDataController;
+import sk.krayo.dbproject.controller.DatabaseMetaDataStatsController;
 
 import javax.sql.DataSource;
 import java.sql.Connection;

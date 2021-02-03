@@ -1,4 +1,4 @@
-package sk.krayo.interviewproject.exception;
+package sk.krayo.dbproject.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

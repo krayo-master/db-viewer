@@ -1,4 +1,4 @@
-package sk.krayo.interviewproject;
+package sk.krayo.dbproject;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -9,8 +9,8 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
-import sk.krayo.interviewproject.domain.DatabaseConnectionData;
-import sk.krayo.interviewproject.repository.DatabaseConnectionDataRepository;
+import sk.krayo.dbproject.domain.DatabaseConnectionData;
+import sk.krayo.dbproject.repository.DatabaseConnectionDataRepository;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest

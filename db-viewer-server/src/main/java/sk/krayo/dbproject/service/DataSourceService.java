@@ -1,11 +1,11 @@
-package sk.krayo.interviewproject.service;
+package sk.krayo.dbproject.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.stereotype.Service;
-import sk.krayo.interviewproject.domain.DatabaseConnectionData;
-import sk.krayo.interviewproject.exception.ResourceNotFoundException;
-import sk.krayo.interviewproject.repository.DatabaseConnectionDataRepository;
+import sk.krayo.dbproject.domain.DatabaseConnectionData;
+import sk.krayo.dbproject.exception.ResourceNotFoundException;
+import sk.krayo.dbproject.repository.DatabaseConnectionDataRepository;
 
 @Service
 public class DataSourceService {
