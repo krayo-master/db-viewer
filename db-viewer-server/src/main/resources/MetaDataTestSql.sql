@@ -9,4 +9,4 @@ CREATE TABLE IF NOT EXISTS public.database_connection_data (
 );
 
 INSERT INTO public.database_connection_data (id,name,hostname,port,database_name,username,password)
-VALUES (9999,'dbviewer','localhost',5432,'dbviewer','postgres','lalala');
+VALUES (9999,'dbviewer','localhost',5432,'dbviewer','postgres','lalala') ON CONFLICT (id) do nothing;

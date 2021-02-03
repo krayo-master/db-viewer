@@ -42,6 +42,9 @@ public class DatabaseMetaDataStatsController {
         return tableStats;
     }
 
+    /**
+     *
+     */
     @GetMapping("/columns/{columnName}/stats")
     public ColumnStats getColumnStats(@PathVariable("databaseId") long databaseId, @PathVariable("schemaName") String schemaName,
                                       @PathVariable("tableName") String tableName, @PathVariable("columnName") String columnName) {
