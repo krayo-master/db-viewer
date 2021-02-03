@@ -9,6 +9,7 @@ Server url path redirects you to swagger (default) doc page with the list of api
 
 //TODO notes
 Logging
+
 possibly refactor complex (or duplicated) metadata controllers logic and move to service layer
 prevent sql injection in metadata controller (feed list of valid options and compare)
 security (users, authentication, password encryption)
