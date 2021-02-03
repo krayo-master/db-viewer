@@ -1,4 +1,4 @@
-# interview-project
+# db-viewer simple
 
 In progress..
 Client(toggling, error message handling)
