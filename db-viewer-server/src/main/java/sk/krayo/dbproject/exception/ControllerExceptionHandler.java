@@ -25,12 +25,12 @@ public class ControllerExceptionHandler {
     @ExceptionHandler(DatabaseConnectionException.class)
     public ResponseEntity<ErrorMessage> databaseConnectionException(DatabaseConnectionException ex, WebRequest request) {
         ErrorMessage message = new ErrorMessage(
-                HttpStatus.NOT_FOUND.value(),
+                HttpStatus.INTERNAL_SERVER_ERROR.value(),
                 new Date(),
                 ex.getMessage(),
                 request.getDescription(false));
 
-        return new ResponseEntity<ErrorMessage>(message, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<ErrorMessage>(message, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler(Exception.class)

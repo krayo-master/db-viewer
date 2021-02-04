@@ -92,7 +92,7 @@ public class DatabaseMetaDataController {
                 table.getForeignKeys().add(foreignKey);
             }
         } catch (SQLException ex) {
-            System.out.println("failed columns");
+            throw new DatabaseConnectionException("Connection error for database id: " + databaseId);
         }
         return table;
     }
