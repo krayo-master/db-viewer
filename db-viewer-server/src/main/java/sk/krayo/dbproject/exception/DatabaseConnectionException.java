@@ -4,7 +4,7 @@ public class DatabaseConnectionException extends RuntimeException{
 
     private static final long serialVersionUID = 1L;
 
-    public DatabaseConnectionException(String msg) {
-        super(msg);
+    public DatabaseConnectionException(long databaseId) {
+        super("Connection error for database id: " + databaseId);
     }
 }

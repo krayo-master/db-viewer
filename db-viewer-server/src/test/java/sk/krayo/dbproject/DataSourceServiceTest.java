@@ -9,7 +9,7 @@ import sk.krayo.dbproject.domain.DatabaseConnectionData;
 import sk.krayo.dbproject.repository.DatabaseConnectionDataRepository;
 import sk.krayo.dbproject.service.DataSourceService;
 
-public class ServiceTest {
+public class DataSourceServiceTest {
 
     @Test
     public void testBuildDataSource() {

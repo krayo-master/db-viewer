@@ -37,11 +37,11 @@ public class MetaDataTest {
     @Autowired
     DatabaseMetaDataStatsController databaseMetaDataStatsController;
 
-    private static boolean dataLoaded = false;
-    private static final long TEST_DB_ID = 9999;
-    private static final String PUBLIC_SCHEMA = "public";
-    private static final String TABLE_NAME = "database_connection_data";
-    private static final String TEST_COLUMN_NAME = "id";
+    static boolean dataLoaded = false;
+    static final long TEST_DB_ID = 9999;
+    static final String PUBLIC_SCHEMA = "public";
+    static final String TABLE_NAME = "database_connection_data";
+    static final String TEST_COLUMN_NAME = "id";
 
     @Before
     public void setup() throws SQLException {
@@ -66,7 +66,7 @@ public class MetaDataTest {
     }
 
     @Test
-    public void testGetColumns() throws Exception {
+    public void testGetColumns(){
         Table table = databaseMetaDataController.getColumns(TEST_DB_ID, PUBLIC_SCHEMA, TABLE_NAME);
         assertThat(table.getColumnList()).isNotEmpty();
         assertThat(table.getColumnList().get(0).getName()).isEqualTo(TEST_COLUMN_NAME);
@@ -82,16 +82,16 @@ public class MetaDataTest {
     @Test
     public void testGetTableStats() {
         TableStats tableStats = databaseMetaDataStatsController.getTableStats(TEST_DB_ID, PUBLIC_SCHEMA, TABLE_NAME);
-        assertThat(tableStats.getNumberOfAttributes()).isGreaterThan(0);
-        assertThat(tableStats.getNumberOfRecords()).isGreaterThan(0);
+        assertThat(tableStats.getNumberOfAttributes()).isPositive();
+        assertThat(tableStats.getNumberOfRecords()).isPositive();
     }
 
     @Test
     public void testGetColumnStatsInt() {
         ColumnStats columnStats = databaseMetaDataStatsController.getColumnStats(TEST_DB_ID, PUBLIC_SCHEMA, TABLE_NAME, TEST_COLUMN_NAME);
-        assertThat(Double.valueOf(columnStats.getMin())).isGreaterThan(0);
-        assertThat(Double.valueOf(columnStats.getMax())).isGreaterThan(0);
-        assertThat(Double.valueOf(columnStats.getAvg())).isGreaterThan(0);
-        assertThat(Double.valueOf(columnStats.getMedian())).isGreaterThan(0);
+        assertThat(Double.valueOf(columnStats.getMin())).isPositive();
+        assertThat(Double.valueOf(columnStats.getMax())).isPositive();
+        assertThat(Double.valueOf(columnStats.getAvg())).isPositive();
+        assertThat(Double.valueOf(columnStats.getMedian())).isPositive();
     }
 }
